@@ -41,7 +41,7 @@ const RoomeDetails = (props: { params: { slug: string } }) => {
       nextDay.setDate(nextDay.getDate() + 1);
       return nextDay;
     }
-    return null;
+    return undefined;
   };
 
   const handleBookNowClick = async () => {

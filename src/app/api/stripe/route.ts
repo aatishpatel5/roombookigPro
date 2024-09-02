@@ -1,5 +1,5 @@
 import { getRoom } from "@/libs/apis";
-import { authOptions } from "@/libs/auth";
+import { authOptions } from "@/libs/auth"; 
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
@@ -9,24 +9,25 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
 });
 
 type RequestData = {
+  adults: number;
   checkinDate: string;
   checkoutDate: string;
-  adults: number;
   children: number;
   numberOfDays: number;
   hotelRoomSlug: string;
 };
 
+ 
 export async function POST(req: Request, res: Response) {
   const {
+    adults,  
     checkinDate,
     checkoutDate,
-    adults,
     children,
     numberOfDays,
     hotelRoomSlug,
   }: RequestData = await req.json();
-
+ 
   if (
     !checkinDate ||
     !checkoutDate ||
@@ -64,7 +65,7 @@ export async function POST(req: Request, res: Response) {
             currency: "usd",
             product_data: {
               name: room.name,
-              images: room.images.map(image => image.url),
+              images: room.images.map((image) => image.url),
             },
             unit_amount: parseInt((totalPrice * 100).toString()),
           },
@@ -81,8 +82,8 @@ export async function POST(req: Request, res: Response) {
         numberOfDays,
         user: userId,
         discount: room.discount,
-        totalPrice
-      }
+        totalPrice,
+      },
     });
 
     return NextResponse.json(stripeSession, {

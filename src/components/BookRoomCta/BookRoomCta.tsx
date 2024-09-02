@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, Children, Dispatch, FC, SetStateAction } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -11,7 +11,7 @@ type Props = {
   setCheckoutDate: Dispatch<SetStateAction<Date | null>>;
   setAdults: Dispatch<SetStateAction<number>>;
   setNoOfChildren: Dispatch<SetStateAction<number>>;
-  calcMinCheckoutDate: ()=> Date | null ;
+  calcMinCheckoutDate: ()=> Date | undefined;
   adults: number;
   noOfChildren: number;
   price: number;

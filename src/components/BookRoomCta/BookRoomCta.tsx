@@ -15,7 +15,7 @@ type Props = {
   adults: number;
   noOfChildren: number;
   price: number;
-  discount: number;
+  discount: number; 
   specialNote: string;
   isBooked: boolean;
   handleBookNowClick: () => void;
@@ -105,7 +105,7 @@ const BookRoomCta: FC<Props> = (props) => {
             id="check-out-date"
             className="w-full border text-black border-gray-300 rounded-lg p-2.5 focus:ring-primary focus:border-primary "
           />
-        </div>
+        </div> 
       </div>
 
       <div className="flex mt-4">

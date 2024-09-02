@@ -45,8 +45,7 @@ const [isSubmittingReview, setIsSubmittingReview] = useState(false)
     setIsSubmittingReview(true);
     
     try {
-      console.log("Iiiiiiin apil call me hai ")
-      const {data} = await axios.post('/api/users', {
+       const {data} = await axios.post('/api/users', {
         reviewText: ratingText,
         ratingValue,
         roomId,

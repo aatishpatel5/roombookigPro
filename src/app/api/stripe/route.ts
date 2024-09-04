@@ -3,6 +3,7 @@ import { authOptions } from "@/libs/auth";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
+import { StripePaymentRequestButtonElement } from "@stripe/stripe-js";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
   apiVersion: "2024-06-20",
@@ -62,7 +63,7 @@ export async function POST(req: Request, res: Response) {
         {
           quantity: 1,
           price_data: {
-            currency: "usd",
+            currency: "inr",
             product_data: {
               name: room.name,
               images: room.images.map((image) => image.url),
@@ -71,7 +72,8 @@ export async function POST(req: Request, res: Response) {
           },
         },
       ],
-      payment_method_types: ["card"],
+       payment_method_types: ["card"],
+
       success_url: `${origin}/users/${userId}`,
       metadata: {
         adults,

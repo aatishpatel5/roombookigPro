@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { getStripe } from "@/libs/stripe";
 import RoomReview from "@/components/RoomReview/RoomReview";
-import PaymentComponent from "@/components/PaymentComponent/PaymentComponent";
+
 
 const RoomeDetails = (props: { params: { slug: string } }) => {
   const {
@@ -178,9 +178,7 @@ const RoomeDetails = (props: { params: { slug: string } }) => {
                 </div>
               </div>
             </div>
-          </div>
-
-          <PaymentComponent/>
+          </div>  
 
           <div className="md:col-span-4 rounded-xl shadow-lg dark:shadow-white sticky top-10 h-fit overflow-auto ">
             {/* BOOK ROOM CTA  */}

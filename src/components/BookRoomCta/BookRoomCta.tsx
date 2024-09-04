@@ -11,7 +11,7 @@ type Props = {
   setCheckoutDate: Dispatch<SetStateAction<Date | null>>;
   setAdults: Dispatch<SetStateAction<number>>;
   setNoOfChildren: Dispatch<SetStateAction<number>>;
-  calcMinCheckoutDate: ()=> Date | undefined;
+  calcMinCheckoutDate: ()=> Date | null;
   adults: number;
   noOfChildren: number;
   price: number;

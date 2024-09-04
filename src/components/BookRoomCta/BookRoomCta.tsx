@@ -74,7 +74,7 @@ const BookRoomCta: FC<Props> = (props) => {
 
       <div className="flex">
         <div className="w-1/2 pr-2">
-          <label
+          <label 
             htmlFor="chack-in-date"
             className="block text-sm text-gray-900 dark:text-gray-400 "
           >

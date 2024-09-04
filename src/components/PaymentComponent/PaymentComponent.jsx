@@ -67,7 +67,7 @@ const PaymentComponent = () => {
 
   return (
     <div>
-      <div id="payment-request-button">googlePay</div>
+      <div id="payment-request-button"></div>
     </div>
   );
 };

@@ -20,13 +20,15 @@ const RoomCard: FC<Props> = (props) => {
           alt={name}
           width={250}
           height={250}
-          className="img scale-animation"
+          className="img scale-animation "
         />
       </div>
 
       <div className="p-4 bg-white">
         <div className="flex justify-between text-xl font-semibold">
-          <p>{name}</p>
+          <Link href={`/rooms/${slug.current}`} className="cursor-pointer hover:underline">
+          <p>{name}</p> 
+          </Link>
           <p>${price}</p>
         </div>
 
@@ -36,7 +38,7 @@ const RoomCard: FC<Props> = (props) => {
 
         <Link
           href={`/rooms/${slug.current}`}
-          className="bg-primary inline-block text-center w-full py-4 rounded-xl text-white text-xl font-bold hover:-translate-y-2 hover:shadow-lg transition-all duration-500"
+          className="bg-blue-700 inline-block text-center w-full py-4 rounded-xl text-white text-xl font-bold hover:-translate-y-2 hover:shadow-lg transition-all duration-500"
         >
           {isBooked ? "BOOKED" : "BOOK NOW"}
         </Link>
@@ -46,3 +48,11 @@ const RoomCard: FC<Props> = (props) => {
 };
 
 export default RoomCard;
+
+
+
+
+
+
+
+

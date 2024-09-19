@@ -37,9 +37,15 @@ export default function RootLayout({
        <ThemeProvider>
         <Toast/>
         <main className="font-normal">
-          <Header/>
+          <Header phoneNumber="+918696142599"/>
           {children}
-          <Footer/>
+          <Footer
+                facebookUrl="https://facebook.com/"
+                instagramUrl="https://instagram.com/"
+                twitterUrl="https://x.com/"
+                phoneNumber="+1234567890"
+                email="shipar124@gmail.com"
+              />
          </main>
         </ThemeProvider>
        </NextAuthProvider>

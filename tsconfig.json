@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Header/Header.jsx", "src/components/PaymentComponent/PaymentComponent.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Header/Header.tsx", "src/components/PaymentComponent/PaymentComponent.tsx"],
   "exclude": ["node_modules"]
 }

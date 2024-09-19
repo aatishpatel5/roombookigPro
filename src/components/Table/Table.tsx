@@ -9,7 +9,7 @@ type Props = {
   setRoomId: Dispatch<SetStateAction<string | null>>;
   toggleRatingModal: () => void;
 };
-
+ 
 const Table: FC<Props> = ({ bookingDetails, setRoomId, toggleRatingModal }) => {
   const router = useRouter();
 

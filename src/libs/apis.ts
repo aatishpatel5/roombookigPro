@@ -38,7 +38,7 @@ export const createBooking = async ({
   checkinDate,
   checkoutDate,
   children,
-  discount,
+  discount, 
   hotelRoom,
   numberOfDays,
   totalPrice,

@@ -42,7 +42,7 @@ const Search: FC<Props> = ({
               onChange={handleRoomTypeChange}
               value={roomTypeFilter}
               className="w-full px-4 py-2 capitalize rounded leading-tight dark:bg-black focus:outline-none"
-            >
+            > 
               <option value="All">All</option>
               <option value="Basic">Basic</option>
               <option value="Luxury">Luxury</option>
@@ -78,3 +78,5 @@ const Search: FC<Props> = ({
 };
 
 export default Search;
+
+ 

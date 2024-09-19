@@ -6,8 +6,8 @@ import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
   apiVersion: "2024-06-20",
-});
-
+}); 
+ 
 type RequestData = {
   adults: number;
   checkinDate: string;
@@ -56,7 +56,10 @@ export async function POST(req: Request, res: Response) {
     const totalPrice = discountPrice * numberOfDays;
 
     // Create a stripe payment
+    // const expressCheckoutElement = elements.create('expressCheckout');
+
     const stripeSession = await stripe.checkout.sessions.create({
+    
       mode: "payment",
       line_items: [
         {
@@ -85,7 +88,7 @@ export async function POST(req: Request, res: Response) {
         discount: room.discount,
         totalPrice,
       },
-    });
+    }); 
 
     return NextResponse.json(stripeSession, {
       status: 200,

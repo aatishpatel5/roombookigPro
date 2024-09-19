@@ -8,14 +8,14 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
   apiVersion: "2024-06-20",
 });
 
-
+ 
 export async function POST(req: Request, res: Response) {
   const reqBody = await req.text();
   const sig = req.headers.get('stripe-signature');
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
-
+                                
   let event: Stripe.Event; 
-
+ 
   try {
     if (!sig || !webhookSecret) return;
     event = stripe.webhooks.constructEvent(reqBody, sig, webhookSecret);
@@ -42,7 +42,7 @@ export async function POST(req: Request, res: Response) {
         },
       } = session as { metadata: Record<string, string> }; 
 
-     
+// console.log("Webhook session is ---------->>>>>>>_---->>>",session)
 
       await createBooking({
         adults: Number(adults),
@@ -54,7 +54,7 @@ export async function POST(req: Request, res: Response) {
         discount: Number(discount),
         totalPrice: Number(totalPrice),
         user,
-      });
+      }); 
 
       // Update hotel room
       await updateHotelRoom(hotelRoom)

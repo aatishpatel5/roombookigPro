@@ -8,9 +8,11 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 
+ 
+
 const Rooms = () => {
-  const [roomTypeFilter, setRoomTypeFilter] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [roomTypeFilter, setRoomTypeFilter] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -59,7 +61,7 @@ const Rooms = () => {
   return (
     <div className="container mx-auto pt-10">
       <Search
-        roomTypeFilter={roomTypeFilter}
+        roomTypeFilter={roomTypeFilter} 
         searchQuery={searchQuery}
         setRoomTypeFilter={setRoomTypeFilter}
         setSearchQuery={setSearchQuery}

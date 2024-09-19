@@ -7,7 +7,7 @@ const booking = {
     fields: [
         defineField({ 
             name: 'user',
-            title: 'User',
+            title: 'User', 
             type: 'reference',
             to: [{type: 'user'}],
             validation: Rule => Rule.required(),
@@ -22,6 +22,12 @@ const booking = {
         defineField({
             name: "checkinDate",
             title: "Check-in Date",
+            type: "date", 
+            validation: Rule => Rule.required()
+        }),
+        defineField({
+            name: "checkoutDate",
+            title: "Check-out Date",   
             type: "date", 
             validation: Rule => Rule.required()
         }),

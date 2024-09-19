@@ -160,7 +160,7 @@ const RoomFilter = () => {
 
         {/* Check-out Date */}
         <div className="flex-1 mb-4 md:mb-0 md:ml-4">
-          <input
+          <input 
             type="date"
             value={checkoutDate}
             onChange={(e) => setCheckoutDate(e.target.value)}
